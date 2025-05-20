@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Style Book</h1>
+    {% if session.username %}
+        <p>Hello, {{ session.username }}!</p>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/signup">Sign Up</a> | <a href="/login">Log In</a>
+    {% endif %}
+</body>
+</html>
